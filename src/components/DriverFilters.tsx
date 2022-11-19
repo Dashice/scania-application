@@ -30,7 +30,7 @@ export const DriverFilters = ({
   onSelectedChange,
   onOptionsChange,
 }: DriverFiltersProps) => {
-  const filterOptions = useMemo(() => [100000, 150000, 200000, 250000], []);
+  const filterOptions = useMemo(() => [200000].sort((a, b) => a - b), []);
 
   /**
    * Generates options for the dropdown component based on the static options array.
@@ -99,7 +99,7 @@ export const DriverFilters = ({
         <ScandashDropdown
           placeholder="Select distance"
           itemSize={58}
-          fontSize={14}
+          fontSize={16}
           options={options.map((option) => ({
             label: option.label,
             value: option.value.toString(),
@@ -112,7 +112,7 @@ export const DriverFilters = ({
       </div>
       <button
         type="button"
-        className="underline text-scania-blue-secondary ms-8"
+        className="underline text-scania-blue-tertiary ms-8"
         onClick={() => onSelectedChange(null)}
       >
         Reset
