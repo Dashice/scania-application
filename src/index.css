@@ -2,14 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html,
+  body,
+  #root {
+    @apply min-h-screen flex flex-col;
+  }
+}
+
 @layer utilities {
+  .flex-center {
+    @apply items-center justify-center;
+  }
+
   .test-1 {
-    border: 1px solid red;
+    @apply border border-red-500;
   }
   .test-2 {
-    border: 1px solid blue;
+    @apply border border-blue-500;
   }
   .test-3 {
-    border: 1px solid green;
+    @apply border border-green-500;
   }
 }

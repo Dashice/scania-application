@@ -32,8 +32,8 @@
       "@assets": [
         "./src/assets"
       ],
-      "@api": [
-        "./src/api"
+      "@types": [
+        "./src/types"
       ]
     }
   },
