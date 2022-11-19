@@ -4,6 +4,8 @@ import { formatDistance } from "@lib";
 
 import { Option } from "@types";
 
+import { ScandashDropdown } from "scandash-component-library-react";
+
 export interface DriverFiltersProps {
   /**
    * The selected filter option to filter drivers by.
@@ -92,18 +94,22 @@ export const DriverFilters = ({
   useEffect(() => onOptionsChange(options), [options, onOptionsChange]);
 
   return (
-    <aside className="flex items-center my-12" aria-label="Filter">
-      <select
-        value={selected || undefined}
-        onChange={(e) => onSelectedChange(e.target.value)}
-      >
-        {options.map((option, index) => (
-          <option key={index} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-
+    <aside className="flex items-center mt-12 mb-8" aria-label="Filter">
+      <div className="w-full max-w-[240px]">
+        <ScandashDropdown
+          placeholder="Select distance"
+          itemSize={58}
+          fontSize={14}
+          options={options.map((option) => ({
+            label: option.label,
+            value: option.value.toString(),
+            selected: option.value.toString() === selected,
+          }))}
+          onOptionChange={(event) =>
+            onSelectedChange(event.detail?.value || null)
+          }
+        />
+      </div>
       <button
         type="button"
         className="underline text-scania-blue-secondary ms-8"

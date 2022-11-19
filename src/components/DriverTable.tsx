@@ -81,7 +81,7 @@ export const DriverTable = ({
               .map((driver, index) => (
                 <tr
                   key={index}
-                  className="border-b border-scania-gray-500 hover:bg-scania-gray-100"
+                  className="border-b border-scania-gray-500 hover:bg-scania-gray-300"
                 >
                   {Object.entries(driver).map(([key, value], jIndex) => (
                     <td key={jIndex} className="p-4">
