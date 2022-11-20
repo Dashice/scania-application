@@ -3,6 +3,13 @@ import ReactDOM from "react-dom/client";
 
 import { Application } from "@components";
 
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from "scandash-component-library/loader";
+
+import "scandash-component-library";
+
 import "./index.css";
 
 const root = ReactDOM.createRoot(
@@ -13,3 +20,7 @@ root.render(
     <Application />
   </React.StrictMode>
 );
+
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});

@@ -2,6 +2,8 @@ import { useEffect, useMemo } from "react";
 
 import { formatDistance } from "@lib";
 
+import { ScandashDropdown } from "@components";
+
 import { Option } from "@types";
 
 export interface DriverFiltersProps {
@@ -94,19 +96,15 @@ export const DriverFilters = ({
   return (
     <aside className="flex items-center mt-12 mb-8" aria-label="Filter">
       <div className="w-full max-w-[240px]">
-        {/*         <ScandashDropdown
+        <ScandashDropdown
+          id="distance-filter"
           placeholder="Select distance"
           itemSize={58}
           fontSize={16}
-          options={options.map((option) => ({
-            label: option.label,
-            value: option.value.toString(),
-            selected: option.value.toString() === selected,
-          }))}
-          onOptionChange={(event) =>
-            onSelectedChange(event.detail?.value || null)
-          }
-        /> */}
+          options={options}
+          selected={selected}
+          onSelectedChange={onSelectedChange}
+        />
       </div>
       <button
         type="button"
