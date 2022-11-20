@@ -4,8 +4,6 @@ import { formatDistance } from "@lib";
 
 import { Option } from "@types";
 
-import { ScandashDropdown } from "scandash-component-library-react";
-
 export interface DriverFiltersProps {
   /**
    * The selected filter option to filter drivers by.
@@ -96,7 +94,7 @@ export const DriverFilters = ({
   return (
     <aside className="flex items-center mt-12 mb-8" aria-label="Filter">
       <div className="w-full max-w-[240px]">
-        <ScandashDropdown
+        {/*         <ScandashDropdown
           placeholder="Select distance"
           itemSize={58}
           fontSize={16}
@@ -108,7 +106,7 @@ export const DriverFilters = ({
           onOptionChange={(event) =>
             onSelectedChange(event.detail?.value || null)
           }
-        />
+        /> */}
       </div>
       <button
         type="button"

@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "license": "MIT",
   "description": "A SPA which displays a list of drivers and their statistics. Which may be filtered out for convenience.",
-  "keywords": ["scania", "driver", "evaluation"],
-
+  "keywords": [
+    "scania",
+    "driver",
+    "evaluation"
+  ],
   "dependencies": {
     "@craco/craco": "^7.0.0",
     "@types/jest": "^27.5.2",
